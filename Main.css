@@ -1,0 +1,1209 @@
+:root {
+
+    /* Fontfamily */
+    --alegreya-sc: 'Alegreya SC', serif;
+    --alumni-sans-pinstripe: 'Alumni Sans Pinstripe', serif;
+    --boogaloo: 'Boogaloo', serif;
+    --geo: 'Geo', serif;
+    --iceland: 'Iceland', serif;
+    --nova-square: 'Nova Square', serif;
+    --ubuntu: 'Ubuntu', serif;
+    --poppins:  "Poppins", serif;
+
+
+
+    /* color */
+
+    --black: #000000;
+    --white: #ffffff;
+    --light-white: #EAEAEC;
+    --light-black: #303036;
+    --headings: #EFEBFF;
+    --links: #EA0B5D;
+    --hovered-link: #B31945;
+    --dark-white: #E6E6E9;
+    --glowing-text: #8F00FF;
+
+
+    /* Font-size */
+    --h1: 5rem;
+    --h2: 4rem;
+    --h3: 3rem;
+    --h4: 2.5rem;
+    --h5: 2rem;
+    --h6: 1.5rem;
+    --h7: 1.2rem;
+    --text: 1rem;
+    --small-text: 0.875rem;
+    --largetext1: 1.2rem;
+    --largetext2: 1.5rem;
+}
+
+/* Full-screen loading screen */
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #000000;
+    color:var(--dark-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 1;
+    transition: opacity 1s ease;
+}
+
+/* Slide out animation for the loading screen */
+#loading-screen.slide-out {
+    transform: translateX(100vw); /* Slide out to the right */
+    transition: transform 1s ease; /* Match slide-out duration in JS */
+}
+
+/* Loading text container */
+#loading-text {
+   
+    font-size: 2rem;
+    font-family: var(--iceland);
+    letter-spacing: 0.2rem;
+    display: flex;
+    gap: 0.4rem;
+}
+
+/* Animated letter styling */
+.letter {
+    opacity: 0;
+    transform: translateY(2rem);
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+/* Fade in and move up animation for letters */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(0rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(2rem);
+    }
+}
+
+/* Body transition for sliding effect */
+body {
+    background-color: #000000;
+    color: var(--dark-white);
+    position: relative;
+   
+}
+
+
+
+
+
+b {
+
+    color: var(--glowing-text);
+    text-shadow:
+
+        0 0 1px var(--glowing-text),
+        /* Subtle glow */
+        0 0 1px var(--glowing-text);
+    /* Slightly stronger glow */
+
+
+
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+strong {
+
+    color: var(--dark-white);
+    font-family: inherit;
+    text-transform: uppercase;
+}
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+a {
+    text-decoration: none;
+    color: var(--links);
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+a:hover {
+    color: var(--hovered-link);
+    text-decoration: underline;
+    text-underline-offset: .3rem;
+}
+
+
+/* Add the animation for scrolling effect */
+/* Slide In From Left */
+.text-animate-left {
+    transform: translateX(-200%);
+    opacity: 0;
+    transition: transform 1.2s ease, opacity .8s ease;
+}
+
+.text-animate-left.show {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+
+
+
+
+/* Apply transition to the whole container to make it smooth */
+section {
+    margin: 50px 0; /* Some space for scroll */
+}
+
+
+
+
+.container {
+    /* border: 2px solid red; */
+    max-width: 1536px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0.1rem;
+    padding-right: 0.1rem;
+    /* border: 2px solid red; */
+
+
+}
+
+/* 2xl */
+@media (max-width: 1536px) {
+    .container {
+        max-width: 1280px;
+    }
+}
+
+/* xl */
+@media (max-width: 1280px) {
+    .container {
+        max-width: 1024px;
+    }
+}
+
+/* lg */
+@media (max-width: 1024px) {
+    .container {
+        max-width: 768px;
+    }
+}
+
+/* md */
+@media (max-width: 768px) {
+    .container {
+        max-width: 640px;
+    }
+}
+
+/* sm */
+@media (max-width: 640px) {
+    .container {
+        max-width: 475px;
+    }
+}
+
+/* xs */
+@media (max-width: 475px) {
+    .container {
+        width: 100%;
+    }
+}
+
+
+
+header {
+    z-index: 1;
+    background-color: var(--black);
+}
+
+/* main navbar */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: transparent;
+    width: 100%;
+    height: 100px;
+}
+
+/* left nav */
+.left-nav .logo {
+    font-family: var(--geo);
+    text-transform: uppercase;
+    font-size: var(--h4);
+    letter-spacing: .4rem;
+    border: 2px solid white;
+    padding: 1rem;
+}
+
+/* .right-nav */
+.right-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.right-nav ul li a {
+    color: white; /* Default color for <a> */
+    background-color: inherit;
+    font-size: var(--largetext2);
+    font-family: var(--iceland);
+    display: inline-block;
+    padding: 1rem;
+}
+
+.right-nav ul li a:hover {
+    transform: scale(1.1);
+    color: var(--black) !important;
+    background-color: var(--dark-white);
+    border-radius: 1%;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+#check {
+    display: none;
+}
+
+#toggle {
+    display: none;
+}
+
+#toggle img {
+    width: 3rem;
+}
+
+@media (max-width: 1276px) {
+    .left-nav .logo {
+        font-size: var(--h6);
+    }
+
+    .right-nav ul {
+        gap: .8rem;
+    }
+
+    .right-nav ul li a {
+        font-size: 1rem;
+        padding: .5rem;
+    }
+}
+
+@media (max-width: 900px) {
+    .left-nav .logo {
+        font-size: var(--h7);
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        position: sticky;
+        top: 0;
+    }
+
+    #check:checked ~ ul {
+        left: 0%; /* Slide the menu from the left */
+    }
+
+    #check:checked ~ ul li {
+        border-bottom: 1px solid #190f0f;
+        width: 100%;
+    }
+
+    #toggle {
+        display: block;
+        margin-right: 20px;
+    }
+
+    .right-nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .left-nav .logo {
+        font-size: var(--h6);
+        letter-spacing: .2rem;
+    }
+
+    .right-nav ul {
+        gap: 2rem;
+        padding-top: 2rem;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        top: 0;
+        width: 40%;
+        height: 100vh;
+        background-color: var(--light-white);
+        color: var(--black);
+        position: fixed;
+        left: -100%; /* Initially hidden off-screen from the left */
+        z-index: 1000;
+        margin-top: 0;
+        transition: all 0.5s ease-in-out; /* Smooth transition from the left */
+    }
+
+    .right-nav ul li a {
+        color: black !important; /* Force color to black using !important */
+        padding: 0 1rem;
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 380px) {
+    .left-nav .logo {
+        font-size: 1.1rem;
+    }
+}
+
+
+.sectionOne {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    align-items: center;
+  
+}
+
+.div {
+
+    margin: 2rem 1rem;
+
+}
+
+.sectionOne h1 {
+
+    font-size: 7rem;
+    font-family: var(--geo);
+    color: var(--white);
+
+}
+
+.sectionOne h2 {
+
+    font-size: 6rem;
+    font-family: var(--geo);
+    margin-bottom: 1rem;
+    color: var(--white);
+
+}
+
+
+
+.sectionOne p {
+
+    font-size: 1.3rem;
+    font-family: var(--geo);
+    margin-bottom: 1.5rem;
+    color: var(--white);
+    line-height: 2rem;
+}
+
+.sectionOne a {
+
+    display: flex;
+    color: var(--light-black);
+    align-items: center;
+    font-family: var(--iceland);
+    font-size: 2.3rem;
+    gap: .2rem;
+    
+
+}
+
+.sectionOne svg {
+
+    fill: #f6f4f4;
+    /* Adjust color of the SVG */
+    animation: moveSvg 1s infinite ease-in-out;
+}
+
+@keyframes moveSvg {
+    0% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(1rem);
+        /* Move forward */
+    }
+
+    100% {
+        transform: translateX(0);
+        /* Back to original */
+    }
+}
+
+
+ul {
+    align-self: flex-start;
+    display: flex;
+    list-style: none;
+    margin-top: 1rem;
+}
+
+ul  li  a{
+  font-size: 1.8rem !important;
+    color: var(--white) !important;
+    padding: 0rem .5rem;
+
+    transition: all .5s ease-out;
+    margin-bottom: 2rem;
+    
+    
+}
+ul  li  a:hover{
+
+  
+   transform: translateY(-1rem) scale(1.5);
+
+}
+
+
+
+
+
+
+@media (max-width: 1024px) {
+    .sectionOne h1 {
+        font-size: 6rem; /* Reduced by 1rem */
+    }
+
+    .sectionOne h2 {
+        font-size: 5rem; /* Reduced by 1rem */
+    }
+
+    .sectionOne p {
+        font-size: 1.2rem; /* Reduced by 0.1rem */
+    }
+
+    .sectionOne a {
+        font-size: 1.3rem; /* Reduced by 1rem */
+    }
+}
+
+@media (max-width: 800px) {
+    .sectionOne h1 {
+        font-size: 5rem; /* Reduced by 1rem */
+    }
+
+    .sectionOne h2 {
+        font-size: 4rem; /* Reduced by 1rem */
+    }
+
+    .sectionOne p {
+        font-size: 1.1rem; /* Reduced by 0.1rem */
+    }
+
+    .sectionOne a {
+        font-size: 1.2rem; /* Reduced by 1rem */
+    }
+}
+
+@media (max-width: 680px) {
+    .sectionOne h1 {
+        font-size: 4rem; /* Reduced by 1rem */
+    }
+
+    .sectionOne h2 {
+        font-size: 3rem; /* Reduced by 1rem */
+    }
+
+    .sectionOne p {
+        font-size: 1rem; /* Reduced by 0.1rem */
+    }
+
+    .sectionOne a {
+        font-size: 1.1rem; /* Reduced by 1rem */
+    }
+}
+
+@media (max-width: 560px) {
+    .sectionOne h1 {
+        font-size: 2.5rem; /* Reduced by 1rem */
+    }
+
+    .sectionOne h2 {
+        font-size: 2rem; /* Reduced by 1rem */
+    }
+
+    .sectionOne p {
+        font-size: 1rem; /* Reduced by 0.1rem */
+    }
+
+    .sectionOne a {
+        font-size: 1.2rem; /* Reduced by 1rem */
+ 
+ 
+    }
+}
+
+@media (max-width: 380px) {
+    .sectionOne h1 {
+        font-size: 2rem; /* Reduced by 1rem */
+    }
+
+    .sectionOne h2 {
+        font-size: 2rem; /* Reduced by 1rem */
+    }
+
+    .sectionOne p {
+        font-size: 1rem; /* Reduced by 0.1rem */
+    }
+
+    .sectionOne a {
+        font-size: 1.2rem; /* Reduced by 1rem */
+ 
+ 
+    }
+}
+
+.sectionTwo {
+
+    display: flex;
+    flex-direction: column;
+    margin-top: 5rem;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 1rem;
+    box-sizing: border-box;
+    background-color: rgb(15, 15, 15);
+    border-radius: 1rem;
+
+}
+
+.projects-collector {
+
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+}
+
+.sectionTwo h1 {
+    background-color: black;
+    align-self: flex-start;
+    font-size: var(--h1);
+    font-family: var(--iceland);
+    color: var(--dark-white);
+    text-transform: uppercase;
+    border: 1px solid white;
+    padding: 2rem;
+    /* Add box-shadow for 3D effect */
+   box-shadow:  10px 10px 0px rgba(248, 247, 247, 0.9);
+
+}
+
+.projects-collector .proJect1 {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0rem;
+    border: 3px solid white;
+    border-radius: 1px;
+    color: var(--dark-white);
+    padding: 2rem;
+
+ 
+
+    /* Add box-shadow for 3D effect */
+   box-shadow:  17px 16px 0px rgba(248, 247, 247, 0.9);
+    /* Optional: Add a slight hover effect */
+    transition: all 0.3s ease-out;
+
+    transform: scale(.7);
+}
+
+.projects-collector .proJect1:hover {
+    box-shadow:  -17px -16px 0px rgba(248, 247, 247, 0.9);
+    transform: scale(.75) ;
+    cursor: pointer;
+}
+
+.proJect1 p {
+
+    font-family: var(--poppins);
+    font-size: 1.1rem;
+  
+}
+
+.proJect1 h2 {
+
+    align-self: flex-start;
+    font-size: var(--h5);
+    font-family: var(--iceland);
+    text-transform: capitalize;
+    margin-bottom: 1rem;
+  
+
+}
+
+.proJect1 a{
+
+    align-self: flex-start;
+    font-size: var(--h6);
+    font-family: var(--iceland);
+    text-transform: capitalize;
+
+}
+
+.projects {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: .21rem;
+    margin-bottom: 1rem;
+    border-radius: 1%;
+}
+
+.projects img {
+
+    max-width: 100%;
+
+
+}
+.projects-collector h2{
+
+    font-family: var(--iceland);
+    font-size: var(--h5);
+}
+
+
+@media (max-width:768px){
+
+    .sectionTwo h1{
+
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+}
+
+@media (max-width:485px){
+
+    .sectionTwo h1{
+   font-size: var(--h3);
+        margin-left: 2rem;
+        margin-right: 2rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+.sectionThree {
+
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    margin-top: 4rem;
+    padding: 1rem 1rem;
+    box-sizing: border-box;
+    background-color: rgb(15, 15, 15);
+    border-radius: 1rem;
+
+}
+
+.sectionThree h1 {
+    background-color: black;
+    font-size: var(--h2);
+    max-width: max-content;
+    font-family: var(--iceland);
+    border: 1px solid white;
+    border-radius: 1px;
+    color: var(--dark-white);
+    padding: 2rem;
+    /* Add box-shadow for 3D effect */
+    box-shadow: 10px 10px 0px rgba(248, 247, 247, 0.9);
+    margin: 2rem 0rem;
+
+}
+
+.sectionThree p {
+
+    padding: 3rem 2rem;
+    font-family: var(--poppins);
+    font-size: 1.1rem;
+    color: var(--black);
+    border: 2px solid white;
+    border-radius: 1%;
+    background-color: var(--dark-white);
+    box-shadow: 9px 9px 0px rgba(143, 0, 250, 0.8);
+    margin: 2rem 0rem;
+}
+
+.sectionThree h2 {
+    background-color: black;
+    font-size: var(--h5);
+    max-width: max-content;
+    font-family: var(--iceland);
+    color: var(--dark-white);
+    margin-top: 2rem;
+    text-transform: capitalize;
+
+
+
+}
+
+.skills-container {
+   
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0rem;
+}
+
+.skillcard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1%;
+    transform: scale(.7);
+    transition: all .4s ease-in;
+    border: 5px solid var(--dark-white);
+    cursor: pointer;
+    padding: 1rem 0rem;
+    border-radius: 2%;
+    box-shadow: 10px 10px 5px 2px rgba(248, 247, 247, 0.8);
+    background-color: black;
+}
+
+.skillcard:hover img {
+
+    transform: scale(1.1)
+}
+
+.skillcard:hover {
+    box-shadow: -10px -10px 5px 2px rgba(248, 247, 247, 0.8);
+}
+
+.skillcard img {
+    max-width: 50%;
+    transition: transform 0.3s ease-in-out;
+}
+
+.skillcard h5 {
+    font-family: var(--geo);
+    font-weight: 600;
+    font-size: var(--h4);
+    transition: color 0.3s ease;
+    margin: 1rem;
+}
+
+.skillcard:nth-child(1) h5 {
+
+    color: orangered;
+
+}
+
+.skillcard:nth-child(2) h5 {
+
+    color: blue;
+}
+
+.skillcard:nth-child(3) h5 {
+
+    color: yellow;
+}
+
+.skillcard:nth-child(4) h5 {
+
+    color: green;
+}
+
+.skillcard:nth-child(5) h5 {
+
+    color: lightgreen;
+}
+
+.skillcard:nth-child(6) h5 {
+
+    color: var(--glowing-text);
+}
+
+.skillcard:nth-child(7) h5 {
+
+    color: rgb(40, 127, 66);
+}
+
+
+@media (max-width:1024px) {
+
+
+    .skills-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0rem;
+    }
+
+}
+
+@media (max-width:640px) {
+
+
+    .sectionThree h1 {
+
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    .skills-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0rem;
+    }
+
+}
+
+@media (max-width:485px) {
+
+
+    .skills-container {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 1rem;
+    }
+
+    .skillcard {
+
+        transform: scale(.8);
+    }
+}
+
+
+
+
+.sectionFour {
+    padding: 3rem 1rem;
+    margin-top: 10rem;
+    box-sizing: border-box;
+    background-color: rgb(15, 15, 15);
+    border-radius: 1rem;
+}
+
+.sectionFour h1 {
+
+    font-size: var(--h3);
+    max-width: max-content;
+    font-family: var(--iceland);
+    border: 1px solid white;
+    background-color: black;
+    border-radius: 1px;
+    color: var(--dark-white);
+    padding: 2rem;
+    /* Add box-shadow for 3D effect */
+    box-shadow: 10px 10px 0px rgba(248, 247, 247, 0.9);
+    margin: 2rem 0rem;
+    text-transform: capitalize;
+}
+
+.main {
+
+
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    grid-template-columns: repeat(5, 1fr);
+    /* 4 cards in a row */
+    grid-template-rows: repeat(2, 1fr);
+    gap: 1rem;
+    /* Space between cards */
+    padding: 1rem;
+    row-gap: 2rem;
+
+    border-radius: 5px;
+
+
+
+}
+
+.main-cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background-color: black;
+    border-radius: 0.4rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow for normal state */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Smooth transitions */
+    padding: 2rem;
+}
+
+.main-cards a {
+    font-family: "Iceland", sans-serif;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: var(--dark-white);
+    transition: transform .5s ease-out;
+
+}
+
+.main-cards a:hover {
+
+    transform: scale(1.2);
+}
+
+/* Hover effect for 3D look */
+.main-cards:hover {
+    transform: translateY(-.5rem);
+    /* Slightly lift the card */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    /* More pronounced shadow on hover */
+}
+
+
+
+@media (max-width: 1536px) {}
+
+/* xl */
+@media (max-width: 1280px) {}
+
+/* lg */
+@media (max-width: 1024px) {
+    .main {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* md */
+@media (max-width: 768px) {
+    .main {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* sm */
+@media (max-width: 640px) {
+    .main {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .sectionFour h1 {
+
+        font-size: var(--h4);
+        max-width: max-content;
+        font-family: var(--iceland);
+        border: 1px solid white;
+        background-color: black;
+        border-radius: 1px;
+        color: var(--dark-white);
+        padding: 2rem;
+        /* Add box-shadow for 3D effect */
+        box-shadow: 10px 10px 0px rgba(248, 247, 247, 0.9);
+        margin: 2rem 0rem;
+        text-transform: capitalize;
+    }
+
+}
+
+
+
+
+
+
+
+.sectionFive {
+
+
+    display: flex;
+    justify-content: center;
+    transition: all 0.5s ease-in-out;
+    gap: 2rem;
+
+}
+
+.sectionFive h1 {
+
+    font-size: var(--h3);
+    max-width: max-content;
+    font-family: var(--iceland);
+    border: 3px solid rgba(41, 175, 94);
+    background-color: black;
+    border-radius: 1px;
+    color: rgb(33, 176, 98);
+    padding: 2rem;
+    /* Add box-shadow for 3D effect */
+    box-shadow: 10px 10px 0px rgba(41, 175, 94, 0.5);
+    margin: 2rem 0rem;
+    text-transform: capitalize;
+    max-height: max-content;
+}
+
+.sectionFive form {
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    font-family: var(--geo);
+    margin-top: 1rem;
+
+}
+
+.sectionFive form input,
+textarea {
+
+    padding: 1rem 2rem .5rem .5rem;
+    border: 2px solid white;
+    background-color: transparent;
+    font-family: var(--iceland);
+    color: var(--dark-white);
+    font-size: 1.2rem;
+    outline: none;
+    min-width: 20rem;
+}
+
+.sectionFive form input::placeholder,
+textarea::placeholder {
+
+
+    color: var(--dark-white);
+    font-size: 1.2rem;
+
+}
+
+.sectionFive form input:focus,
+textarea:focus {
+
+    border: 2px solid rgba(41, 175, 94);
+}
+
+.sectionFive textarea {
+
+    resize: vertical;
+    min-height: 4rem;
+
+}
+
+
+#btn {
+
+    padding: 1rem;
+    cursor: pointer;
+    font-size: var(--h4);
+    font-family: var(--geo);
+    transform: scale(.99);
+
+}
+
+#btn:hover {
+
+    background-color: rgb(194, 190, 190);
+    transform: scale(1);
+}
+
+
+@media (max-width:768px) {
+
+    .sectionFive{
+        flex-direction: column;
+    }
+
+    
+}
+
+
+.footer {
+    position: relative;
+    bottom: 0;
+    margin-top: 3rem;
+    width: 100%;
+    padding-bottom: 2rem;
+    text-align: center;
+
+
+}
+
+
+
+
+
+@media (max-width: 1536px) {}
+
+/* xl */
+@media (max-width: 1280px) {}
+
+/* lg */
+@media (max-width: 1024px) {}
+
+/* md */
+@media (max-width: 768px) {
+
+    .footer {
+        margin-top: 2rem;
+        width: 100%;
+        padding-bottom: 1rem;
+
+
+    }
+
+}
+
+/* sm */
+@media (max-width: 640px) {
+    .footer {
+        margin-top: 2rem;
+        width: 100%;
+        padding-bottom: .5rem;
+
+
+    }
+
+    .footer-txt {
+        text-align: center;
+        font-size: .8rem;
+
+
+    }
+}
+
+
+/* xs */
+@media (max-width: 475px) {
+
+    .footer {
+        margin-top: 2rem;
+        width: 100%;
+        padding-bottom: .5rem;
+
+
+    }
+
+    .footer-txt {
+        text-align: center;
+        font-size: .8rem;
+
+
+    }
+}
